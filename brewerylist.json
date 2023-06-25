@@ -1,4 +1,4 @@
-const data = [
+[
     {
       "name": "Bale Breaker & Yonder Cider Taproom*",
       "address": "826 NW 49th St",
@@ -78,23 +78,4 @@ const data = [
       "longitude": -122.3678
     }
   ]
-
-
-const map = L.map('map').setView([47.66, -122.38], 13);
-
-const tiles = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    maxZoom: 19,
-    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
-
-const itemList = document.getElementById('item-list');
-
-// Iterate over the JSON data
-data.forEach(item => {
-    // Create a list item element
-    const li = document.createElement('li');
-    li.textContent = item.name;
-
-    // Append the list item to the item list
-    itemList.appendChild(li);
-});
+  
