@@ -115,11 +115,23 @@ data.forEach(brewery => {
     });
     // Add a mouseover listener that highlights the brewery
     li.addEventListener('mouseover', () => {
-        li.classList.add('selected');
+        li.classList.add('hovered');
+        // add a popup to the marker
+        marker.bindPopup(brewery.name).openPopup();
+    });
+    // Add the same popup when hovering the marker
+    marker.addEventListener('mouseover', () => {
+        marker.bindPopup(brewery.name).openPopup();
     });
     // Add a mouseout listener that removes the highlight
     li.addEventListener('mouseout', () => {
-        li.classList.remove('selected');
+        li.classList.remove('hovered');
+        // remove the popup from the marker
+        marker.closePopup();
+    });
+    // Remove the popup when not hovering the marker
+    marker.addEventListener('mouseout', () => {
+        marker.closePopup();
     });
 
     // Append the list item to the item list
